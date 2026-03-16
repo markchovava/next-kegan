@@ -9,6 +9,7 @@ import { useAppInfoStore } from '../_store/useAppInfoStore'
 import { useEffect } from 'react'
 import LoaderPrimary from '../../_components/loaders/LoaderPrimary'
 import { valueWithFallback } from '@/_utils/StringManipulation'
+import { baseURL } from '@/_api/baseURL'
 
 
 
@@ -67,7 +68,7 @@ function DataMainArea() {
     return(
       <section className='container__primary bg-white drop-shadow-lg rounded-lg p-6 space-y-4'>
         
-        <RecordImage label='Image' value={preData.image} />
+        <RecordImage label='Image' value={baseURL + preData.image} />
         
         <RecordDefault label='Name' value={valueWithFallback(preData.name)} />
         <RecordDefault label='Email' value={valueWithFallback(preData.email)} />
