@@ -30,7 +30,6 @@ export default function HomePage({
         dataList: clientList 
     } = useClientStore()
 
-    console.log('CLIENT', clientData)
     
     useEffect(() => {
         if(partnerData) {
