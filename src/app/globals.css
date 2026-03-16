@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+html {
+    scroll-behavior: smooth;
+  }
+
+.text__primary {
+  @apply text-blue-800;
+}
+
+
+.border__primary {
+  @apply border-blue-800;
+}
+
+
+.bg__secondary{
+  @apply bg-blue-950;
+}
+
+
+.container__primary{
+  @apply w-[92%] mx-auto;
+}
