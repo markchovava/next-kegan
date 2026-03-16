@@ -20,7 +20,7 @@ export const PrimaryNavData: NavInterface[] = [
 
 export const FooterData: NavInterface[] = [
     {id: 1, name: 'Privacy', href:'/privacy', isOpen: false, items: []},
-    {id: 2, name: 'Terms of Use', href:'/term-of-use', isOpen: false, items: []},
+    {id: 2, name: 'Terms of Use', href:'/terms-of-use', isOpen: false, items: []},
     {id: 3, name: 'Cookies Policy', href:'/cookie-policy', isOpen: false, items: []},
 ]
 

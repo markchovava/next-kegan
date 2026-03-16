@@ -34,14 +34,19 @@ export default function HeaderPrimary({ title, image }: PropInterface) {
     </header>
 
     {/* MOBILE */}
-    <header className="w-full lg:hidden block bg-linear-to-tr from-blue-600 to-blue-950 text-gray-50">
+    <header 
+        style={{ backgroundImage: `url(${image})` }} 
+        className="w-full h-[50vh] relative bg-fixed bg-cover bg-bottom lg:hidden block bg-linear-to-tr from-blue-600 to-blue-950 text-gray-50">
+          <section className='absolute top-0 left-0 z-10 w-full h-full bg-linear-to-bl from-blue-950 to-transparent'></section>
         {/* NAV */}
-        <NavResponsiveDefault />
+        <section className='absolute left-0 top-0 w-full h-full z-15'> 
+            <NavResponsiveDefault />
+            {/* TITLE */}
+            <div className='container__primary mx-auto flex pt-8 pb-12 items-center justify-center text-center'>
+                <TitleDefault title={title} />
+            </div>
+        </section>
         
-        {/* TITLE */}
-        <div className='container__primary mx-auto flex pt-8 pb-12 items-center justify-center text-center'>
-            <TitleDefault title={title} />
-        </div>
     </header>
     </>
   )
