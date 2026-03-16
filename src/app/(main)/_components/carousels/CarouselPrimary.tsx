@@ -11,6 +11,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import ImageDefault from '../images/ImageDefault';
 import { CardInterface } from '../../_data/entity/CardEntity';
+import { PartnerInterface } from '@/app/admin/partner/_data/entity/PartnerEntity';
+import { baseURL } from '@/_api/baseURL';
 
 
 interface SwiperRefType {
@@ -19,7 +21,7 @@ interface SwiperRefType {
 
 
 interface PropInterface{
-    data?: CardInterface[]
+    data?: CardInterface[] | PartnerInterface[]
 }
 
 
@@ -76,7 +78,7 @@ export default function CarousePrimary({ data }: PropInterface) {
         {/* slides */}
         { data && data.map((i, key) => (
           <SwiperSlide key={key} className='p-2'>
-            <ImageDefault src={i.image} alt={i.name} />
+            <ImageDefault src={baseURL + i.image} alt={i.name} />
           </SwiperSlide>
         ))}
       </Swiper>

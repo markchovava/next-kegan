@@ -72,7 +72,7 @@ function DataMainArea() {
     return(
       <section className='container__primary bg-white drop-shadow-lg rounded-lg p-6 space-y-4'>
         
-        <RecordImage label='Image' value={preData.image} />
+        <RecordImage label='Image' value={preData.image} css='aspect-2/1' />
         <RecordDefault label='Name' value={valueWithFallback(preData.name)} />
         <RecordDefault label='Priority' value={valueWithFallback(priority)} />
         <RecordDefault label='Last Updated' value={valueWithFallback(updated)} />

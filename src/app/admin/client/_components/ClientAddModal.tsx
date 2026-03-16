@@ -12,6 +12,7 @@ import { ButtonAdminSubmit } from '../../_components/buttons/ButtonAdminSubmit';
 import SelectAdminDefault from '../../_components/forms/selects/SelectAdminDefault';
 import ImageInputDefault from '../../_components/forms/image/ImageInputDefault';
 import { _clientStoreAction } from '../_data/actions/ClientActions';
+import { PriorityData } from '../../_data/sample/PriorityData';
 
 
 
@@ -149,7 +150,7 @@ export default function ClientAddModal() {
                                 <SelectAdminDefault
                                     label='Priority' 
                                     name='priority' 
-                                    data={Array.from({ length: 4 }, (v, i) => i + 1)}
+                                    data={PriorityData}
                                     value={data.priority} 
                                     onChange={setInputValue} 
                                     error={errors.priority.toString()}

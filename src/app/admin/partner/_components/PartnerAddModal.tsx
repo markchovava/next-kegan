@@ -1,6 +1,6 @@
 "use client"
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 import { usePartnerStore } from '../_store/usePartnerStore';
 import { toast } from 'react-toastify';
@@ -12,6 +12,7 @@ import { ButtonAdminSubmit } from '../../_components/buttons/ButtonAdminSubmit';
 import SelectAdminDefault from '../../_components/forms/selects/SelectAdminDefault';
 import ImageInputDefault from '../../_components/forms/image/ImageInputDefault';
 import { _partnerStoreAction } from '../_data/actions/PartnerActions';
+import { PriorityData } from '../../_data/sample/PriorityData';
 
 
 
@@ -45,6 +46,10 @@ export default function PartnerAddModal() {
         setIsSubmitting,
         validateForm,
     } = usePartnerStore()
+
+    useEffect(() => {
+        resetData()
+    }, [resetData])
     
     const handleToggleModal = () => {
         setToggleModal(!toggleModal)
@@ -145,7 +150,7 @@ export default function PartnerAddModal() {
                                 <SelectAdminDefault
                                     label='Priority' 
                                     name='priority' 
-                                    data={Array.from({ length: 4 }, (v, i) => i + 1)}
+                                    data={PriorityData}
                                     value={data.priority} 
                                     onChange={setInputValue} 
                                     error={errors.priority.toString()}

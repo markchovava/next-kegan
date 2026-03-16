@@ -47,7 +47,7 @@ export default function RoleAddModal() {
 
     useEffect(() => { 
         resetData() 
-    }, [])
+    }, [resetData])
 
     const handleToggleModal = () => {
         setToggleModal(!toggleModal)

@@ -17,7 +17,7 @@ export const AdminNavData: AdminNavInterface[] = [
         href: '/admin/user', 
         css: `bg-linear-to-br from-sky-500 to-sky-800 hover:bg-linear-to-br hover:from-sky-500 hover:to-sky-950` 
     },
-    {
+   /*  {
         id: 8, 
         iconType: 'page', 
         name: 'Pages', 
@@ -30,7 +30,7 @@ export const AdminNavData: AdminNavInterface[] = [
         name: 'Projects', 
         href: '/admin/project', 
         css: `bg-linear-to-br from-green-500 to-green-800 hover:bg-linear-to-br hover:from-green-500 hover:to-green-950` 
-    },
+    }, */
     {
         id: 3, 
         iconType: 'service', 
@@ -38,7 +38,7 @@ export const AdminNavData: AdminNavInterface[] = [
         href: '/admin/service', 
         css: `bg-linear-to-br from-indigo-500 to-indigo-800 hover:bg-linear-to-br hover:from-indigo-500 hover:to-indigo-950` 
     },
-    {
+   /*  {
         id: 4, 
         iconType: 'product', 
         name: 'Products Info', 
@@ -58,7 +58,7 @@ export const AdminNavData: AdminNavInterface[] = [
         name: 'Media', 
         href: '/admin/media', 
         css: `bg-linear-to-br from-fuchsia-500 to-fuchsia-800 hover:bg-linear-to-br hover:from-fuchsia-500 hover:to-fuchsia-950` 
-    },
+    }, */
     {
         id: 9, 
         iconType: 'client', 

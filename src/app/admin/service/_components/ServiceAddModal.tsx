@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 import { useServiceStore } from '../_store/useServiceStore';
 import { toast } from 'react-toastify';
@@ -46,6 +46,10 @@ export default function ServiceAddModal() {
         setIsSubmitting,
         validateForm,
     } = useServiceStore()
+
+    useEffect(() => {
+        resetData()
+    }, [resetData])
 
     const handleToggleModal = () => {
         setToggleModal(!toggleModal)

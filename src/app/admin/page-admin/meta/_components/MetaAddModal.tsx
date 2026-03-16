@@ -50,7 +50,7 @@ export default function MetaAddModal() {
     useEffect(() => { 
         resetData() 
         resetKeyword()
-    }, [])
+    }, [resetData, resetKeyword])
         
         const handleToggleModal = () => {
             setToggleModal(!toggleModal)

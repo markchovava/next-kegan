@@ -13,6 +13,7 @@ import ImageInputDefault from '@/app/admin/_components/forms/image/ImageInputDef
 import { useClientStore } from '../../_store/useClientStore';
 import { baseURL } from '@/_api/baseURL';
 import { _clientUpdateAction } from '../../_data/actions/ClientActions';
+import { PriorityData } from '@/app/admin/_data/sample/PriorityData';
 
 
 
@@ -146,7 +147,7 @@ export default function ClientEditModal({ id }: PropInterface) {
                                 <SelectAdminDefault
                                     label='Priority' 
                                     name='priority' 
-                                    data={Array.from({ length: 4 }, (v, i) => i + 1)}
+                                    data={PriorityData}
                                     value={data.priority} 
                                     onChange={setInputValue} 
                                     error={errors.priority.toString()}

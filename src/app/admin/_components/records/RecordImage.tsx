@@ -6,12 +6,14 @@ import Image from 'next/image'
 
 interface PropInterface{
     label: string
-    value?: string
+    value?: string,
+    css?: string
 }
 
 export default function RecordImage({
     label, 
-    value
+    value,
+    css='aspect-4/3',
 }: PropInterface) {
 
 
@@ -24,7 +26,7 @@ export default function RecordImage({
     <div className='text-lg flex lg:flex-row flex-col items-start justify-start lg:gap-3 gap-1'>
         <div className='lg:w-[15%] leading-tight w-full font-light'>{label}:</div>
         <div className='lg:w-[85%] leading-tight w-full'>
-            <div className='lg:w-[30%] w-[50%] aspect-4/3 rounded-xl overflow-hidden bg-gray-50 drop-shadow-lg relative'>
+            <div className={` ${css} lg:w-[30%] w-[50%] rounded-xl overflow-hidden bg-gray-50 drop-shadow-lg relative`}>
               {/* <Image 
                   alt={`Image`} 
                   src={imgURL} 

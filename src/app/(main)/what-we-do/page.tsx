@@ -1,4 +1,3 @@
-import React from 'react'
 import HeaderPrimary from '../_components/headers/HeaderPrimary'
 import FooterDefault from '../_components/footers/FooterDefault'
 import FadeSlideIn from '../_components/effects/FadeSlideIn'
@@ -6,13 +5,13 @@ import DoubleSection from '../_components/sections/DoubleSection'
 import Spacer from '@/_components/spacers/Spacer'
 import { ServiceData } from '../_data/sample/ServiceData'
 import ContactSection from '../_components/sections/ContactSection'
-import TitlePrimary from '../_components/titles/TitlePrimary'
-import CarousePrimary from '../_components/carousels/CarouselPrimary'
-import { ClientData } from '../_data/sample/ClientData'
+import { clientAllAction } from '../_data/actions/ClientActions'
+import WhatWeDoPage from './_components/WhatWeDoPage'
 
 
 
-export default function page() {
+export default async function page() {
+  const [ clientData ] = await Promise.all([ clientAllAction() ])
   const headerImage = '/assets/img/banner/service.jpg'
 
   return (
@@ -35,11 +34,7 @@ export default function page() {
     ))}
 
 
-    <div className="mx-auto container__primary">
-      <TitlePrimary title="Our Clients" />
-      <CarousePrimary data={ClientData} />
-      <Spacer />
-    </div>
+    <WhatWeDoPage clientData={clientData} />
 
 
     <FadeSlideIn slideDirection="up" duration={1500}>

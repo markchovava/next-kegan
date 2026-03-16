@@ -13,6 +13,7 @@ import ImageInputDefault from '@/app/admin/_components/forms/image/ImageInputDef
 import { usePartnerStore } from '../../_store/usePartnerStore';
 import { baseURL } from '@/_api/baseURL';
 import { _partnerUpdateAction } from '../../_data/actions/PartnerActions';
+import { PriorityData } from '@/app/admin/_data/sample/PriorityData';
 
 
 
@@ -146,7 +147,7 @@ export default function PartnerEditModal({ id }: PropInterface) {
                                 <SelectAdminDefault
                                     label='Priority' 
                                     name='priority' 
-                                    data={Array.from({ length: 4 }, (v, i) => i + 1)}
+                                    data={PriorityData}
                                     value={data.priority} 
                                     onChange={setInputValue} 
                                     error={errors.priority.toString()}

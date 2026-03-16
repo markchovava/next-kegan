@@ -9,9 +9,12 @@ import DoubleSection from '../_components/sections/DoubleSection'
 import TitlePrimary from '../_components/titles/TitlePrimary'
 import CarousePrimary from '../_components/carousels/CarouselPrimary'
 import { PartnerData } from '../_data/sample/PartnerData'
+import AboutPage from './_components/AboutPage'
+import { partnerAllAction } from '../_data/actions/PartnerActions'
 
 
-export default function page() {
+export default async function page() {
+    const [partnerData ] = await Promise.all([partnerAllAction()])
     const headerImage = '/assets/img/banner/about.jpg'
 
   return (
@@ -46,19 +49,7 @@ export default function page() {
         </FadeSlideIn>
     </div>
 
-    <div className="mx-auto container__primary">
-        <Spacer />
-        <TitlePrimary title="Our Partners" />
-        <CarousePrimary data={PartnerData} />
-        <Spacer />
-    </div>
-    
-    <FadeSlideIn slideDirection="up" duration={1500}>
-        <div className="bg-gray-50">
-        <Spacer />
-        <ContactSection withMap={false} />
-        </div>
-    </FadeSlideIn>
+    <AboutPage partnerData={partnerData} />
 
     <FooterDefault />
     </div>

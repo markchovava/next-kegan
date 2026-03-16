@@ -10,9 +10,20 @@ import DoubleSection from "./_components/sections/DoubleSection";
 import CarousePrimary from "./_components/carousels/CarouselPrimary";
 import { ClientData } from "./_data/sample/ClientData";
 import { PartnerData } from "./_data/sample/PartnerData";
+import { partnerAllAction } from "./_data/actions/PartnerActions";
+import HomePage from "./_components/HomePage";
+import { clientAllAction } from "./_data/actions/ClientActions";
 
 
-export default function Home() {
+export default async function Home() {
+  const [
+    partnerData, 
+    clientData 
+  ] = await Promise.all([
+      partnerAllAction(), 
+      clientAllAction()
+  ])
+
   return (
    <div className='bg-gray-50'>
     <HeaderDefault />
@@ -43,25 +54,10 @@ export default function Home() {
         </FadeSlideIn>
     </div>
 
-    <div className="mx-auto container__primary">
-       <Spacer />
-       <TitlePrimary title="Our Clients" />
-      <CarousePrimary data={ClientData} />
-    </div>
-
-    <FadeSlideIn slideDirection="up" duration={1500}>
-        <div className="bg-gray-50">
-          <Spacer />
-          <ContactSection withMap={true} />
-        </div>
-    </FadeSlideIn>
-
-    <div className="mx-auto container__primary">
-        <Spacer />
-        <TitlePrimary title="Our Partners" />
-        <CarousePrimary data={PartnerData} />
-        <Spacer />
-    </div>
+    <HomePage 
+        partnerData={partnerData} 
+        clientData={clientData} 
+    />
 
     <FooterDefault />
    </div>
