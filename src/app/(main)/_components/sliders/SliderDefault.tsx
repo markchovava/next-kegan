@@ -115,12 +115,12 @@ export default function SliderDefault() {
               className='w-full h-full object-cover' 
               alt='Image' />
             </div>
-            <div className="absolute z-15 w-full h-full bg-linear-to-br from-black to-transparent opacity-40" /> 
+            <div className="absolute z-15 w-full h-full bg-linear-to-tr from-black to-transparent opacity-40" /> 
             
             {/* Text Content */}
             <AnimatePresence mode="wait">
               {activeIndex === SlideData.indexOf(i) && (
-                <div className="absolute inset-0 flex flex-col justify-center items-start p-12 z-20 text-white">
+                <div className="absolute inset-0 flex flex-col justify-center items-start p-12 z-20 text-white text-shadow-xl">
                   <motion.h2
                     custom={0}
                     variants={textVariants}
