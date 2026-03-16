@@ -6,9 +6,9 @@ import "react-toastify/dist/ReactToastify.css";
 
 
 export const metadata: Metadata = {
-  title: "Bako CMS",
-  description: "Bako CMS",
-  keywords: ["Bako CMS"],
+  title: "Kegan Management Consulting",
+  description: "Kegan Brands Consulting",
+  keywords: ["Kegan Brands Consulting"],
 };
 
 export default function RootLayout({
