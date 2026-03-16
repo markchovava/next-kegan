@@ -12,13 +12,11 @@ export default function HeaderDefault() {
         <section className="w-full h-full absolute z-10 top-0 left-0">
             <SliderDefault />
         </section>
-  
+        {/* NAVIGATION */}
         <section className="z-20 absolute top-0 left-0 w-full h-40 text-white">
             <nav className="container__primary mx-auto flex items-center justify-between pt-4 pb-3">
-            <LogoDefault css='h-16' />
-
-            <NavDefault />
-
+              <LogoDefault css='h-16' />
+              <NavDefault />
             </nav>
         </section>
     </header>
@@ -29,7 +27,9 @@ export default function HeaderDefault() {
         <NavResponsiveDefault />
         
         {/* SLIDER */}
-        <section></section>
+        <section className='h-screen'>
+          <SliderDefault />
+        </section>
     </header>
     </>
   )

@@ -15,35 +15,33 @@ import { PartnerData } from "./_data/sample/PartnerData";
 export default function Home() {
   return (
    <div className='bg-gray-50'>
-   <HeaderDefault />
+    <HeaderDefault />
 
-  <FadeSlideIn slideDirection="up" duration={1500}>
-    
-    <IntroSection withBtn={true} data={AboutData.intro} />
+    <FadeSlideIn slideDirection="up" duration={1500}>  
+      <IntroSection withBtn={true} data={AboutData.intro} />
+    </FadeSlideIn>
 
-  </FadeSlideIn>
-
-  <div className="bg-blue-950 text-gray-50 text-xl">
-      {/*  */}
-      <FadeSlideIn slideDirection="left" duration={1500}>
-            <Spacer />
-            <DoubleSection
-                direction="right" 
-                image={AboutData.mission.image}
-                title={AboutData.mission.title} 
-                details={AboutData.mission.details} />
-            <Spacer />
-      </FadeSlideIn>
-      {/*  */}
-      <FadeSlideIn slideDirection="right" duration={1500}>
-        <DoubleSection
-            direction="left" 
-            image={AboutData.vision.image}
-            title={AboutData.vision.title} 
-            details={AboutData.vision.details} />
-        <Spacer />
-      </FadeSlideIn>
-  </div>
+    <div className="bg-blue-950 text-gray-50 text-xl">
+        {/*  */}
+        <FadeSlideIn slideDirection="left" duration={1500}>
+              <Spacer />
+              <DoubleSection
+                  direction="right" 
+                  image={AboutData.mission.image}
+                  title={AboutData.mission.title} 
+                  details={AboutData.mission.details} />
+              <Spacer />
+        </FadeSlideIn>
+        {/*  */}
+        <FadeSlideIn slideDirection="right" duration={1500}>
+          <DoubleSection
+              direction="left" 
+              image={AboutData.vision.image}
+              title={AboutData.vision.title} 
+              details={AboutData.vision.details} />
+          <Spacer />
+        </FadeSlideIn>
+    </div>
 
     <div className="mx-auto container__primary">
        <Spacer />
@@ -51,21 +49,21 @@ export default function Home() {
       <CarousePrimary data={ClientData} />
     </div>
 
-   <FadeSlideIn slideDirection="up" duration={1500}>
-      <div className="bg-gray-50">
+    <FadeSlideIn slideDirection="up" duration={1500}>
+        <div className="bg-gray-50">
+          <Spacer />
+          <ContactSection withMap={true} />
+        </div>
+    </FadeSlideIn>
+
+    <div className="mx-auto container__primary">
         <Spacer />
-        <ContactSection withMap={true} />
-      </div>
-   </FadeSlideIn>
+        <TitlePrimary title="Our Partners" />
+        <CarousePrimary data={PartnerData} />
+        <Spacer />
+    </div>
 
-  <div className="mx-auto container__primary">
-      <Spacer />
-      <TitlePrimary title="Our Partners" />
-      <CarousePrimary data={PartnerData} />
-      <Spacer />
-  </div>
-
-   <FooterDefault />
+    <FooterDefault />
    </div>
   );
 }
