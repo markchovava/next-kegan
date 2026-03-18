@@ -1,6 +1,8 @@
 export const AboutData = {
-    intro: <>
-            <p >
+    intro: {
+        title: `Our Story`,
+        details: <>
+            <p>
                 KEGAN Management Consulting (formerly The Asset Label Company) 
                 stands as a leading authority in marking, identification, and traceability 
                 solutions. We equip organizations with advanced systems that safeguard brands, 
@@ -17,27 +19,12 @@ export const AboutData = {
                 2014, rebranded in 2019 under KEGAN Brands Zimbabwe, and in 2025 was reborn as KEGAN 
                 Management Consulting following a strategic unbundling and regional expansion.
             </p>
-        </>,
-    info: <>
-            <p >
-                Our Story KEGAN Management Consulting (formerly The Asset Label Company) 
-                stands as a leading authority in marking, identification, and traceability 
-                solutions. We equip organizations with advanced systems that safeguard brands, 
-                strengthen accountability, ensure authentication, and enable reliable asset 
-                tracking to meet critical business demands, all of which are integral to effective 
-                asset management solutions.   
-            </p>
-            <div className="h-4" />
-            <p >
-                Founded to close gaps in fixed asset management—particularly 
-                in labelling, marking, tracking, and valuation—KEGAN has evolved into a trusted partner 
-                offering comprehensive business consulting services that extend far beyond its original 
-                scope. Once a unit of Northrell Consulting, the company became The Asset Label Company in 
-                2014, rebranded in 2019 under KEGAN Brands Zimbabwe, and in 2025 was reborn as KEGAN 
-                Management Consulting following a strategic unbundling and regional expansion.
-            </p>
-            <div className="h-4" />
-            <p >
+        </>
+    },
+    background: {
+        title: 'Our Background',
+        details: <>
+            <p>
                 Our new identity reflects the spirit of our journey—from our beginnings in 2012 to the 
                 diverse solutions we deliver today. We now operate across multiple domains, offering Data 
                 Protection and Security (in partnership with a Forbes 50 US company), Management Services 
@@ -52,9 +39,13 @@ export const AboutData = {
                 remote workforce solutions. We also run a specialized unit dedicated to protecting electronic 
                 equipment with leading tools such as ESET, Norton, and other advanced antivirus 
                 technologies—because asset protection extends well beyond accounting and auditing.  
-            </p>
-            <div className="h-4" />
-            <p >
+            </p> 
+        </>
+    },
+    current: {
+        title: `Who we are now`,
+        details: <>
+            <p>
                 Today, our footprint stretches across Southern Africa, with operations in South Africa, 
                 Botswana, Zambia, and Mozambique. Rooted in accounting and auditing, our formation was a 
                 natural response to the rising demand for fixed asset labelling and management in Zimbabwe 
@@ -66,7 +57,8 @@ export const AboutData = {
                 coordinated programs that integrate internal controls, procedures, and enterprise 
                 data protection policies.
             </p>
-        </>,
+        </>
+    },
     mission: {
         image: '/assets/img/about/01_about.jpg',
         title: 'Our Mission',

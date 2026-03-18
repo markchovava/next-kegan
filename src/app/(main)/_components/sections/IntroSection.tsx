@@ -3,18 +3,24 @@
 import Link from "next/link"
 import { ButtonPrimary } from "../buttons/ButtonPrimary"
 import Spacer from "@/_components/spacers/Spacer"
+import TitlePrimary from "../titles/TitlePrimary"
+
 
 interface PropInterface{
     withBtn?: boolean
     data: React.ReactNode
+    title?: string
 }
 
-export default function IntroSection({ withBtn=false, data }: PropInterface) {
+export default function IntroSection({ withBtn=false, data, title }: PropInterface) {
   return (
-    <section className="bg-gray-100 text-2xl font-light">
+    <section className="text-xl font-light">
        <Spacer />
         <div className="lg:w-[60%] w-[90%] mx-auto">
-        {/* <TitleDefault title="About Us" /> */}
+        {title &&
+          <TitlePrimary 
+            title={title ?? ''} />
+        }
         {data}
         <div className="h-8" />
         {withBtn &&

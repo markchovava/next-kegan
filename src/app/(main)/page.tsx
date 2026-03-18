@@ -2,17 +2,15 @@ import FooterDefault from "./_components/footers/FooterDefault";
 import HeaderDefault from "./_components/headers/HeaderDefault";
 import IntroSection from "./_components/sections/IntroSection";
 import FadeSlideIn from "./_components/effects/FadeSlideIn";
-import TitlePrimary from "./_components/titles/TitlePrimary";
 import Spacer from "@/_components/spacers/Spacer";
-import ContactSection from "./_components/sections/ContactSection";
 import { AboutData } from "./_data/sample/AboutData";
 import DoubleSection from "./_components/sections/DoubleSection";
-import CarousePrimary from "./_components/carousels/CarouselPrimary";
-import { ClientData } from "./_data/sample/ClientData";
-import { PartnerData } from "./_data/sample/PartnerData";
 import { partnerAllAction } from "./_data/actions/PartnerActions";
 import HomePage from "./_components/HomePage";
 import { clientAllAction } from "./_data/actions/ClientActions";
+import SliderSecondary from "./_components/sliders/SliderSecondary";
+import SliderDefault from "./_components/sliders/SliderDefault";
+
 
 
 export default async function Home() {
@@ -28,9 +26,18 @@ export default async function Home() {
    <div className='bg-gray-50'>
     <HeaderDefault />
 
-    <FadeSlideIn slideDirection="up" duration={1500}>  
-      <IntroSection withBtn={true} data={AboutData.intro} />
-    </FadeSlideIn>
+    <div className="w-full h-120">
+      <SliderSecondary />
+    </div>
+   
+
+    <div className="bg-gray-900 text-gray-50">
+      <FadeSlideIn slideDirection="up" duration={1500}>  
+        <IntroSection 
+            withBtn={true} 
+            data={AboutData.intro.details} />
+      </FadeSlideIn>
+    </div>
 
     <div className="bg-blue-950 text-gray-50 text-xl">
         {/*  */}

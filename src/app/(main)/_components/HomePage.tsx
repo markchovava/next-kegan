@@ -43,24 +43,34 @@ export default function HomePage({
   return (
     <>
 
-    <div className="mx-auto container__primary">
-       <Spacer />
-       <TitlePrimary title="Our Clients" />
-      <CarousePrimary data={clientList} />
+    <div className="bg-blue-900 text-gray-50">
+        <FadeSlideIn slideDirection="up" duration={1500}>
+            <Spacer />
+            <div className="mx-auto container__primary">
+                <TitlePrimary title="Our Clients" />
+                <CarousePrimary data={clientList} />
+            </div>
+            <Spacer />
+        </FadeSlideIn>
     </div>
 
     <FadeSlideIn slideDirection="up" duration={1500}>
-        <div className="bg-gray-50">
+        <div className="bg-gray-100">
           <Spacer />
           <ContactSection withMap={true} />
         </div>
     </FadeSlideIn>
     
-    <div className="mx-auto container__primary">
-        <Spacer />
-        <TitlePrimary title="Our Partners" />
-        <CarousePrimary data={partnerList} />
-        <Spacer />
+
+    <div className="bg-blue-900 text-gray-50">
+        <FadeSlideIn slideDirection="up" duration={1500} >
+            <Spacer />
+            <div className="mx-auto container__primary">
+                <TitlePrimary title="Our Partners" />
+                <CarousePrimary data={partnerList} />
+            </div>
+            <Spacer />
+        </FadeSlideIn>
     </div>
     </>
   )

@@ -1,6 +1,12 @@
 import { NavInterface } from "../entity/NavEntity"
 
 export const WhatWeDoData: NavInterface[] = [
+    {id: 1, name: 'Software', href:'/what-we-do#one', isOpen: false, items: []},
+    {id: 2, name: 'Fixed Assets', href:'/what-we-do#two', isOpen: false, items: []},
+    {id: 3, name: 'General Consulting', href:'/what-we-do#three', isOpen: false, items: []},
+]
+
+export const FixedAssetsData: NavInterface[] = [
     {id: 1, name: 'Fixed Assets Tags', href:'/what-we-do#one', isOpen: false, items: []},
     {id: 2, name: 'Fixed Assets Tagging Solutions', href:'/what-we-do#two', isOpen: false, items: []},
     {id: 3, name: 'Assets Value Added Services', href:'/what-we-do#three', isOpen: false, items: []},

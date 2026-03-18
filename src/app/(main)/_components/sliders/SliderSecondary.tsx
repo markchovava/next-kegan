@@ -12,7 +12,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 import Image from 'next/image';
 import Link from 'next/link';
-import { SliderData } from '../../_data/sample/SliderData';
+import { ServiceSliderData, SliderData } from '../../_data/sample/SliderData';
 import { ButtonPrimary } from '../buttons/ButtonPrimary';
 
 
@@ -43,7 +43,7 @@ const textVariants: Variants = {
   }
 };
 
-export default function SliderDefault() {
+export default function SliderSecondary() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isClient, setIsClient] = useState(false);
   const swiperRef = useRef(null);
@@ -104,53 +104,62 @@ export default function SliderDefault() {
         }}
         className="w-full h-full">
         
-        { SliderData.map((i, key) => (
-          <SwiperSlide key={key} className="relative w-full h-full">
+        { ServiceSliderData.map((i, key) => (
+          <SwiperSlide key={key} className={`${i.css} relative w-full h-full`}>
             
+           {/*  
             <div className="absolute z-10 w-full h-full bg-slate-900 to-transparent"> 
-            <Image 
+           <Image 
               src={i.image} 
               width={1400} 
               height={600} 
               className='w-full h-full object-cover' 
-              alt='Image' />
+              alt='Image' /> 
             </div>
+            */}
             <div className="absolute z-15 w-full h-full bg-linear-to-tr from-black to-transparent opacity-40" /> 
             
             {/* Text Content */}
             <AnimatePresence mode="wait">
-              {activeIndex === SliderData.indexOf(i) && (
-                <div className="absolute inset-0 flex flex-col justify-center items-start p-12 z-20 text-white text-shadow-xl">
-                  <motion.h2
-                    custom={0}
-                    variants={textVariants}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                    className="text-4xl md:text-5xl font-bold mb-4"
-                  >
-                    {i.title}
-                  </motion.h2>        
-                  <motion.p
-                    custom={1}
-                    variants={textVariants}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                    className="text-xl font-light md:text-2xl mb-8 max-w-lg" >
-                        {i.description}
-                  </motion.p>
-                  <motion.div
-                    custom={2}
-                    variants={textVariants}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit">
-                      <Link href={i.href}>
-                      <ButtonPrimary title={i.btnTitle} css='text-lg py-3 px-8' />
-                      </Link>
-                  </motion.div>
-                </div>
+              {activeIndex === ServiceSliderData.indexOf(i) && (
+                <section className='grid grid-cols-5 gap-4 absolute inset-0 text-white text-shadow-xl'> 
+                  <div className="col-span-3 flex flex-col justify-center items-start p-12 z-20">
+                    <motion.h2
+                      custom={0}
+                      variants={textVariants}
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit"
+                      className="text-4xl md:text-5xl font-bold mb-4">
+                      {i.title}
+                    </motion.h2>        
+                    <motion.p
+                      custom={1}
+                      variants={textVariants}
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit"
+                      className="text-xl font-light mb-8 max-w-lg" >
+                          {i.description}
+                    </motion.p>
+                    <motion.div
+                      custom={2}
+                      variants={textVariants}
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit">
+                        <Link href={i.href}>
+                        <ButtonPrimary title={i.btnTitle} css='text-lg py-3 px-8' />
+                        </Link>
+                    </motion.div>
+                  </div>
+                  <div className='col-span-2 h-full w-full'>
+                    <img src={i.image} 
+                        className='object-cover w-full h-full' 
+                        alt='Image' />
+                  </div>
+
+                </section>
               )}
             </AnimatePresence>
 

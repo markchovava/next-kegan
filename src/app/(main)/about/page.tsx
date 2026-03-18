@@ -2,13 +2,9 @@ import Spacer from '@/_components/spacers/Spacer'
 import FadeSlideIn from '../_components/effects/FadeSlideIn'
 import HeaderPrimary from '../_components/headers/HeaderPrimary'
 import IntroSection from '../_components/sections/IntroSection'
-import ContactSection from '../_components/sections/ContactSection'
 import { AboutData } from '../_data/sample/AboutData'
 import FooterDefault from '../_components/footers/FooterDefault'
 import DoubleSection from '../_components/sections/DoubleSection'
-import TitlePrimary from '../_components/titles/TitlePrimary'
-import CarousePrimary from '../_components/carousels/CarouselPrimary'
-import { PartnerData } from '../_data/sample/PartnerData'
 import AboutPage from './_components/AboutPage'
 import { partnerAllAction } from '../_data/actions/PartnerActions'
 
@@ -21,11 +17,26 @@ export default async function page() {
     <div className='bg-gray-50'>
     <HeaderPrimary title='About Us' image={headerImage} />
 
-    <FadeSlideIn slideDirection="up" duration={1500}>
-        <IntroSection 
-            withBtn={false} 
-            data={AboutData.info} />
-    </FadeSlideIn>
+    <Section 
+        css='bg-gray-900 text-gray-50' 
+        title={AboutData.intro.title} 
+        details={AboutData.intro.details} 
+    />
+
+    <Section 
+        css='bg-blue-950 text-gray-50' 
+        title={AboutData.background.title} 
+        details={AboutData.background.details} 
+    />
+
+    <Section 
+        css='bg-gray-100 text-gray-950' 
+        title={AboutData.current.title} 
+        details={AboutData.current.details} 
+    />
+
+
+   
     
     <div className="bg-blue-950 text-gray-50 text-xl">
         {/*  */}
@@ -54,4 +65,24 @@ export default async function page() {
     <FooterDefault />
     </div>
   )
+}
+
+
+interface SectInterface{
+    details: any
+    title: string
+    css: string
+}
+
+function Section({css, details, title}: SectInterface){
+    return(
+        <div className={css}>
+            <FadeSlideIn slideDirection="up" duration={1500}>
+                <IntroSection 
+                    withBtn={false} 
+                    title={title}
+                    data={details} />
+            </FadeSlideIn>
+        </div>
+    )
 }
