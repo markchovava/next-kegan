@@ -130,7 +130,7 @@ export default function SliderSecondary() {
                       initial="hidden"
                       animate="visible"
                       exit="exit"
-                      className="text-4xl md:text-5xl font-bold mb-4">
+                      className="text-4xl font-bold mb-4">
                       {i.title}
                     </motion.h2>        
                     <motion.p
