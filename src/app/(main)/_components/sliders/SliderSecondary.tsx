@@ -87,8 +87,8 @@ export default function SliderSecondary() {
         speed={2000}
         effect="fade"
         autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
+          delay: 6000,
+          disableOnInteraction: true,
         }}
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
         onSwiper={(swiper) => {
