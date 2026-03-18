@@ -122,8 +122,8 @@ export default function SliderSecondary() {
             {/* Text Content */}
             <AnimatePresence mode="wait">
               {activeIndex === ServiceSliderData.indexOf(i) && (
-                <section className='grid grid-cols-5 gap-4 absolute inset-0 text-white text-shadow-xl'> 
-                  <div className="col-span-3 flex flex-col justify-center items-start p-12 z-20">
+                <section className='grid lg:grid-cols-5 grid-cols-1 h-auto gap-4 absolute inset-0 text-white text-shadow-xl'> 
+                  <div className="lg:col-span-3 lg:h-full h-90 flex flex-col justify-center items-start p-12 z-20">
                     <motion.h2
                       custom={0}
                       variants={textVariants}
@@ -153,7 +153,7 @@ export default function SliderSecondary() {
                         </Link>
                     </motion.div>
                   </div>
-                  <div className='col-span-2 h-full w-full'>
+                  <div className='lg:col-span-2 lg:h-full h-70 w-full'>
                     <img src={i.image} 
                         className='object-cover w-full h-full' 
                         alt='Image' />

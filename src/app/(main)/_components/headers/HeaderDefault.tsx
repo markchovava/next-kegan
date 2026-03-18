@@ -8,7 +8,7 @@ export default function HeaderDefault() {
   return (
     <>
     {/* DESKTOP */}
-    <header className="w-full lg:block hidden lg:h-[98vh] relative">
+    <header className="w-full h-full lg:block hidden lg:h-[98vh] relative">
         {/* SLIDER */}
         <section className="w-full h-full absolute z-10 top-0 left-0">
             {/* <SliderDefault /> */}
@@ -27,10 +27,9 @@ export default function HeaderDefault() {
     <header className="w-full lg:hidden block bg-linear-to-tr from-blue-600 to-blue-950">
         {/* NAV */}
         <NavResponsiveDefault />
-        
         {/* SLIDER */}
-        <section className='h-screen'>
-          <BannerDefault />
+        <section className=''>
+            <BannerDefault />
         </section>
     </header>
     </>

@@ -55,7 +55,7 @@ export default function BannerDefault() {
 
         <motion.p
           variants={itemVariants}
-          className="text-lg md:text-xl font-light max-w-lg mb-8 text-shadow-md">
+          className="text-xl font-light max-w-lg mb-8 text-shadow-md">
           {description}
         </motion.p>
 

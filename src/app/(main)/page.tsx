@@ -26,10 +26,10 @@ export default async function Home() {
    <div className='bg-gray-50'>
     <HeaderDefault />
 
-    <div className="w-full h-120">
+    <div className="w-full lg:h-120 h-160">
       <SliderSecondary />
     </div>
-   
+  
 
     <div className="bg-gray-900 text-gray-50">
       <FadeSlideIn slideDirection="up" duration={1500}>  
