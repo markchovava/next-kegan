@@ -13,7 +13,7 @@ export default function PageAdminPage() {
   return (
     <>
     <SpacerDefault />
-    <HeadingDefault title="Settings" />
+    <HeadingDefault title="Pages" />
     <SpacerPrimary />
 
     <section className="container__primary grid lg:grid-cols-4 grid-cols-2 gap-4">

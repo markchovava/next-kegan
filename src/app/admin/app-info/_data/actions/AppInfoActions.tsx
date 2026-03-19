@@ -4,12 +4,13 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { baseURL } from "@/_api/baseURL";
+import { AuthServerCookieName } from "@/_cookie/CookieServer";
 
 
 
 export async function _appInfoViewAction() {
     const cookieStore = await cookies();
-    const authToken = await cookieStore.get('BAKO_AUTH_TOKEN_COOKIE');
+    const authToken = await cookieStore.get(AuthServerCookieName);
     if(!authToken?.value){ redirect('/auth/login'); }
     const res = await fetch(`${baseURL}api/app-info`, {
       'method': 'GET',
@@ -24,7 +25,7 @@ export async function _appInfoViewAction() {
 
 export async function _appInfoStoreAction(data: any) {
     const cookieStore = await cookies();
-    const authToken = await cookieStore.get('BAKO_AUTH_TOKEN_COOKIE');
+    const authToken = await cookieStore.get(AuthServerCookieName);
     if(!authToken?.value){ redirect('/auth/login'); }
     const res = await fetch(`${baseURL}api/app-info`, {
       'method': 'POST',

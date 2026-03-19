@@ -17,14 +17,14 @@ export const AdminNavData: AdminNavInterface[] = [
         href: '/admin/user', 
         css: `bg-linear-to-br from-sky-500 to-sky-800 hover:bg-linear-to-br hover:from-sky-500 hover:to-sky-950` 
     },
-   /*  {
+   {
         id: 8, 
         iconType: 'page', 
         name: 'Pages', 
         href: '/admin/page-admin', 
         css: `bg-linear-to-br from-violet-500 to-violet-800 hover:bg-linear-to-br hover:from-violet-500 hover:to-violet-950` 
     },
-    {
+    /*  {
         id: 2, 
         iconType: 'project', 
         name: 'Projects', 
