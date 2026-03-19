@@ -11,6 +11,7 @@ import { cache } from 'react'
 import { Metadata } from 'next'
 import { PageMetaInterface } from '../_data/entity/PageMetaEntity'
 import { pageMetaBySlugAction } from '../_data/actions/PageMetaActions'
+import { getAppInfo } from '../_data/actions/AppInfoActions'
 
 
 interface PropInterface{
@@ -60,8 +61,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
 
 export default async function page() {
-  const [partnerData] = await Promise.all([
+  const [partnerData, appInfoData] = await Promise.all([
     getPartner(),
+    getAppInfo()
   ]);
 
   const headerImage = '/assets/img/banner/about.jpg'
@@ -111,7 +113,7 @@ export default async function page() {
         </FadeSlideIn>
       </div>
 
-      <AboutPage partnerData={partnerData} />
+      <AboutPage partnerData={partnerData} appInfoData={appInfoData} />
 
       <FooterDefault />
     </div>

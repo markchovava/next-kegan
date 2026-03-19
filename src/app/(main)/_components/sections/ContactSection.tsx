@@ -14,6 +14,7 @@ import CardDate from '../cards/CardDate'
 import { DateTimeData } from '../../_data/sample/ContactData'
 import { toast } from 'react-toastify'
 import { contactStoreAction } from '../../contact/_actions/ContactActions'
+import { useAppInfoStore } from '../../_store/useAppInfoStore'
 
 interface PropInterface{
     withMap?: boolean
@@ -31,6 +32,9 @@ export default function ContactSection({withMap=false}: PropInterface) {
         clearErrors,
         resetData,
     } = useContactStore()
+    const { 
+        data: appInfoData,
+    } = useAppInfoStore()
 
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -130,14 +134,18 @@ export default function ContactSection({withMap=false}: PropInterface) {
             <SpacerPrimary />
             <TitleSecondary title="KEGAN Management Consulting" />
             <ul className='font-light space-y-3 pt-3 pb-4'>
-                <li className='flex items-center justify-start gap-2 text-lg'>
-                    <IconDefault type='phone' css='text-lg text-blue-700' />
-                    +263772265921 | 0242 339 042 | 08644 076 533
-                </li>
-                <li className='flex items-center justify-start gap-2 text-lg'>
-                    <IconDefault type='address' css='text-lg text-blue-700' />
-                    6 Natal Road Belgravia Harare ZIMBABWE
-                </li>
+                {appInfoData.phone &&
+                    <li className='flex items-center justify-start gap-2 text-lg'>
+                        <IconDefault type='phone' css='text-lg text-blue-700' />
+                        {appInfoData.phone}
+                    </li>
+                }
+                {appInfoData.address &&
+                    <li className='flex items-center justify-start gap-2 text-lg'>
+                        <IconDefault type='address' css='text-lg text-blue-700' />
+                        {appInfoData.address}
+                    </li>
+                }
             </ul>
             <SpacerPrimary />
             <div className='flex flex-wrap items-center justify-start gap-3 mb-2'>

@@ -9,17 +9,20 @@ import { usePartnerStore } from "@/app/admin/partner/_store/usePartnerStore"
 import FadeSlideIn from "./effects/FadeSlideIn"
 import ContactSection from "./sections/ContactSection"
 import { useClientStore } from "@/app/admin/client/_store/useClientStore"
+import { useAppInfoStore } from "../_store/useAppInfoStore"
 
 
 interface PropInterface{
     partnerData: ResponseInterface
     clientData: ResponseInterface
+    appInfoData?: any
 }
 
 
 export default function HomePage({
     partnerData, 
     clientData,
+    appInfoData
 } : PropInterface) {
     const { 
         setDataList: setPartnerList, 
@@ -29,16 +32,21 @@ export default function HomePage({
         setDataList: setClientList, 
         dataList: clientList 
     } = useClientStore()
+    const { 
+        setData: setAppInfoData
+    } = useAppInfoStore()
 
-    
     useEffect(() => {
+        if(appInfoData.data){
+            setAppInfoData(appInfoData.data)
+        }
         if(partnerData) {
             setPartnerList(partnerData)
         }
         if(clientData) {
             setClientList(clientData)
         }
-    }, [])
+    }, [setAppInfoData, setPartnerList, setClientList])
 
   return (
     <>

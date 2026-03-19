@@ -68,24 +68,24 @@ export default function AppInfoEditModal() {
         }
         setIsSubmitting(true);
         const formData = new FormData()
-            formData.append('name', data.name);
-            formData.append('phone', data.phone);
-            formData.append('email', data.email);
-            formData.append('website', data.website);
-            formData.append('address', data.address);
-            formData.append('description', data.description);
-            formData.append('whatsapp', data.whatsapp);
-            formData.append('facebook', data.facebook);
-            formData.append('instagram', data.instagram);
-            formData.append('tiktok', data.tiktok);
-            formData.append('linkedin', data.linkedin);
-            formData.append('twitter', data.twitter);
+            formData.append('name', data.name ?? "");
+            formData.append('phone', data.phone?? "");
+            formData.append('email', data.email?? "");
+            formData.append('website', data.website?? "");
+            formData.append('address', data.address?? "");
+            formData.append('description', data.description?? "");
+            formData.append('whatsapp', data.whatsapp?? "");
+            formData.append('facebook', data.facebook?? "");
+            formData.append('instagram', data.instagram?? "");
+            formData.append('tiktok', data.tiktok ?? "");
+            formData.append('linkedin', data.linkedin ?? "");
+            formData.append('twitter', data.twitter ?? "");
             if(data.imageUpload) {
                 formData.append('image', data.imageUpload)
             }
         try {
             const res = await _appInfoStoreAction(formData);
-            console.log('res', res)
+            // console.log('res', res)
             const {status, message, data} = res
             switch(status){
                 case 1:
@@ -130,14 +130,14 @@ export default function AppInfoEditModal() {
                                 <hr className="w-full border-b border-gray-100" />
                                 <SpacerPrimary />
 
-                                <ImageInputDefault 
+                               {/*  <ImageInputDefault 
                                     label='Image' 
                                     name='name'
                                     value={baseURL + data.image}
                                     onChange={(e) => setImage(e)} 
                                     error={errors.image}
                                 />
-                                <SpacerPrimary />
+                                <SpacerPrimary /> */}
                                 
                                 <TextInputDefault
                                     label='Name:' 

@@ -68,7 +68,7 @@ function DataMainArea() {
     return(
       <section className='container__primary bg-white drop-shadow-lg rounded-lg p-6 space-y-4'>
         
-        <RecordImage label='Image' value={baseURL + preData.image} />
+        {/* <RecordImage label='Image' value={baseURL + preData.image} /> */}
         
         <RecordDefault label='Name' value={valueWithFallback(preData.name)} />
         <RecordDefault label='Email' value={valueWithFallback(preData.email)} />

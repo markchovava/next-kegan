@@ -14,6 +14,7 @@ import { PageMetaInterface } from "./_data/entity/PageMetaEntity";
 import { cache } from "react";
 import { pageMetaBySlugAction } from "./_data/actions/PageMetaActions";
 import { Metadata } from "next";
+import { appInfoViewAction, getAppInfo } from "./_data/actions/AppInfoActions";
 
 
 
@@ -62,10 +63,12 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Home() {
   const [
     partnerData, 
-    clientData 
+    clientData,
+    appInfoData
   ] = await Promise.all([
       partnerAllAction(), 
-      clientAllAction()
+      clientAllAction(),
+      getAppInfo()
   ])
 
   return (
@@ -109,7 +112,8 @@ export default async function Home() {
 
     <HomePage 
         partnerData={partnerData} 
-        clientData={clientData} 
+        clientData={clientData}
+        appInfoData={appInfoData} 
     />
 
     <FooterDefault />

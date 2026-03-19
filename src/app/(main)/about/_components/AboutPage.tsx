@@ -10,24 +10,32 @@ import { useEffect } from "react"
 import FadeSlideIn from "../../_components/effects/FadeSlideIn"
 import ContactSection from "../../_components/sections/ContactSection"
 import { ResponseInterface } from "@/app/admin/_data/entities/ResponseEntity"
+import { useAppInfoStore } from "../../_store/useAppInfoStore"
 
 interface PropInterface{
     partnerData: ResponseInterface
+    appInfoData: any
 }
 
 
-export default function AboutPage({partnerData}: PropInterface) {
+export default function AboutPage({partnerData, appInfoData}: PropInterface) {
     const { 
         setDataList: setPartnerList, 
         dataList: partnerList 
     } = usePartnerStore()
+    const {
+        setData: setAppInfoData
+    } = useAppInfoStore()
 
 
     useEffect(() => {
+        if(appInfoData?.data) {
+            setAppInfoData(appInfoData.data)
+        }
         if(partnerData) {
             setPartnerList(partnerData)
         }
-    }, [])
+    }, [setAppInfoData, setPartnerList])
   return (
     <>
     <div className="mx-auto container__primary">

@@ -6,6 +6,8 @@ import { PageMetaInterface } from '../_data/entity/PageMetaEntity'
 import { pageMetaBySlugAction } from '../_data/actions/PageMetaActions'
 import { cache } from 'react'
 import { Metadata } from 'next'
+import { getAppInfo } from '../_data/actions/AppInfoActions'
+import ContactPage from './_components/ContactPage'
 
 
 
@@ -50,15 +52,18 @@ export async function generateMetadata(): Promise<Metadata> {
 
 
 
-export default function page() {
+export default async function page() {
+  const [ appInfoData ] = await Promise.all([
+      getAppInfo()
+    ]);
+
   const headerImage = '/assets/img/banner/contact.jpg'
   
   return (
     <>
     <HeaderPrimary title='Contact Us' image={headerImage} />
 
-    <Spacer />
-    <ContactSection withMap={true} />
+    <ContactPage appInfoData={appInfoData} />
 
     <FooterDefault />
     </>

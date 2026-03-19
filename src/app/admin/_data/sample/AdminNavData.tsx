@@ -31,13 +31,13 @@ export const AdminNavData: AdminNavInterface[] = [
         href: '/admin/project', 
         css: `bg-linear-to-br from-green-500 to-green-800 hover:bg-linear-to-br hover:from-green-500 hover:to-green-950` 
     }, */
-    {
+   /*  {
         id: 3, 
         iconType: 'service', 
         name: 'Services', 
         href: '/admin/service', 
         css: `bg-linear-to-br from-indigo-500 to-indigo-800 hover:bg-linear-to-br hover:from-indigo-500 hover:to-indigo-950` 
-    },
+    }, */
    /*  {
         id: 4, 
         iconType: 'product', 
