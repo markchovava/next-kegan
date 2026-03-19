@@ -1,7 +1,7 @@
 "use server";
 
 import { baseURL } from "@/_api/baseURL";
-import { AuthServerCookieName } from "@/_cookie/CookieServer";
+import { AuthServerCookieName, UserCookieName } from "@/_cookie/CookieServer";
 import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
@@ -44,7 +44,7 @@ export async function _checkAuthAction() {
 
 export async function _checkUserIsAdminAction(num: number = 1) {
   const cookieStore = await cookies();
-  const current = cookieStore.get('BAKO_CURRENT_USER_COOKIE');
+  const current = cookieStore.get(UserCookieName);
   if (!current?.value) {
     redirect('/');
     return;

@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   if (!pageMeta?.data) {
     return {
-      title: 'Contact Us',
+      title: 'Cookie Policy',
       description: '',
     };
   }

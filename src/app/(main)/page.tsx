@@ -10,7 +10,53 @@ import HomePage from "./_components/HomePage";
 import { clientAllAction } from "./_data/actions/ClientActions";
 import SliderSecondary from "./_components/sliders/SliderSecondary";
 import SliderDefault from "./_components/sliders/SliderDefault";
+import { PageMetaInterface } from "./_data/entity/PageMetaEntity";
+import { cache } from "react";
+import { pageMetaBySlugAction } from "./_data/actions/PageMetaActions";
+import { Metadata } from "next";
 
+
+
+interface PropInterface{
+    data: PageMetaInterface
+    status: number | string
+}
+
+
+
+const getPageMeta = cache(async (slug: string): Promise<PropInterface | null> => {
+  const data = await pageMetaBySlugAction(slug);
+  return data ?? null;
+});
+
+export async function generateMetadata(): Promise<Metadata> {
+  const pageMeta = await getPageMeta('home');
+
+  if (!pageMeta?.data) {
+    return {
+      title: 'Kegan Management Consulting - Home',
+      description: '',
+    };
+  }
+
+  const { title, description, keywords } = pageMeta.data;
+  let parsedKeywords: string[] = [];
+  try {
+    parsedKeywords = JSON.parse(keywords);
+  } catch {
+    parsedKeywords = [];
+  }
+
+  return {
+    title,
+    description,
+    keywords: parsedKeywords,
+    openGraph: {
+      title,
+      description,
+    },
+  };
+}
 
 
 export default async function Home() {
