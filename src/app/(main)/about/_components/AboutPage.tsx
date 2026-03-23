@@ -38,12 +38,14 @@ export default function AboutPage({partnerData, appInfoData}: PropInterface) {
     }, [setAppInfoData, setPartnerList])
   return (
     <>
-    <div className="mx-auto container__primary">
-        <Spacer />
-        <TitlePrimary title="Our Partners" />
-        <CarousePrimary data={partnerList} />
-        <Spacer />
-    </div>
+    <section className="w-full bg-blue-900 text-gray-50">
+        <div className="mx-auto container__primary">
+            <Spacer />
+            <TitlePrimary title="Our Partners" />
+            <CarousePrimary data={partnerList} />
+            <Spacer />
+        </div>
+    </section>
 
     <FadeSlideIn slideDirection="up" duration={1500}>
         <div className="bg-gray-50">
