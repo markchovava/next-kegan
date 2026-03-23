@@ -36,7 +36,7 @@ export default function HeaderPrimary({ title, image }: PropInterface) {
     {/* MOBILE */}
     <header 
         style={{ backgroundImage: `url(${image})` }} 
-        className="w-full h-[50vh] relative bg-fixed bg-cover bg-bottom lg:hidden block bg-linear-to-tr from-blue-600 to-blue-950 text-gray-50">
+        className="w-full h-[60vh] relative bg-fixed bg-cover bg-bottom lg:hidden block bg-linear-to-tr from-blue-600 to-blue-950 text-gray-50">
           <section className='absolute top-0 left-0 z-10 w-full h-full bg-linear-to-bl from-blue-950 to-transparent'></section>
         {/* NAV */}
         <section className='absolute left-0 top-0 w-full h-full z-15'> 
