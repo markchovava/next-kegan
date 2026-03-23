@@ -42,10 +42,10 @@ export default function HeaderPrimary({ title, image }: PropInterface) {
         <section className='absolute left-0 top-0 w-full h-full z-15'> 
             <NavResponsiveDefault />
             {/* TITLE */}
-            <div className='container__primary mx-auto flex pt-8 pb-12 items-center justify-center text-center'>
-                <TitleDefault title={title} />
-            </div>
         </section>
+          <div className='absolute z-12 left-0 top-0 w-full h-full flex pt-24 pb-12 px-6 items-center justify-center text-center'>
+              <TitleDefault title={title} />
+          </div>
         
     </header>
     </>
