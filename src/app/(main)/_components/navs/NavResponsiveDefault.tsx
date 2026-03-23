@@ -26,8 +26,7 @@ export default function NavResponsiveDefault() {
                 initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
                 animate={{ opacity: 1, rotate: 0, scale: 1 }}
                 exit={{ opacity: 0, rotate: 90, scale: 0.5 }}
-                transition={{ duration: 0.2 }}
-            >
+                transition={{ duration: 0.2 }} >
                 <IconDefault type={'close'} css="text-3xl text-gray-50" />
             </motion.div>
             ) : (

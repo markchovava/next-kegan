@@ -1,9 +1,9 @@
 import { NavInterface } from "../entity/NavEntity"
 
 export const WhatWeDoData: NavInterface[] = [
-    {id: 1, name: 'Software', href:'/what-we-do#one', isOpen: false, items: []},
-    {id: 2, name: 'Fixed Assets', href:'/what-we-do#two', isOpen: false, items: []},
-    {id: 3, name: 'General Consulting', href:'/what-we-do#three', isOpen: false, items: []},
+    {id: 1, name: 'Software', href:'/what-we-do/software', isOpen: false, items: []},
+    {id: 2, name: 'Fixed Assets', href:'/what-we-do/fixed-assets', isOpen: false, items: []},
+    {id: 3, name: 'General Consulting', href:'/what-we-do/general-consulting', isOpen: false, items: []},
 ]
 
 export const FixedAssetsData: NavInterface[] = [
