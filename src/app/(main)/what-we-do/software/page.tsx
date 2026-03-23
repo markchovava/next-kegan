@@ -77,9 +77,6 @@ export default async function page() {
     ))}
 
 
-    <WhatWeDoPage clientData={clientData} />
-
-
     <FadeSlideIn slideDirection="up" duration={1500}>
           <div className="bg-gray-50">
           <Spacer />
